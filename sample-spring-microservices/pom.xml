@@ -8,8 +8,8 @@
 
 	<parent>
 		<groupId>org.springframework.cloud</groupId>
-		<artifactId>spring-cloud-starter-parent</artifactId>
-		<version>Brixton.RELEASE</version>
+		<artifactId>spring-cloud-starter-parent</artifactId> 
+		<version>Dalston.SR3</version>
 	</parent>
 
 	<properties>
