@@ -2,10 +2,12 @@ package pl.piomin.microservices.edge;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.sleuth.sampler.AlwaysSampler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableZuulProxy
@@ -20,5 +22,11 @@ public class Application {
 	public AlwaysSampler defaultSampler() {
 	  return new AlwaysSampler();
 	}
+	
+	@LoadBalanced
+    @Bean
+    public RestTemplate getRestTemplate(){
+        return new RestTemplate();
+}
 	
 }

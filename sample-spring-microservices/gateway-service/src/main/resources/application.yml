@@ -21,6 +21,7 @@ zuul:
       serviceId: account-service
     customer: 
       path: /customer/**
+      sensitiveHeaders: Cookie,Set-Cookie
       serviceId: customer-service
     auth:
       path: /auth/**

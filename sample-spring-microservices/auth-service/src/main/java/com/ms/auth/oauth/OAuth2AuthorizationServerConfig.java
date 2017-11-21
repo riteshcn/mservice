@@ -34,8 +34,8 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
 	
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("gigy").secret("secret").accessTokenValiditySeconds(60)
-				.scopes("read", "write").authorizedGrantTypes("password", "refresh_token").resourceIds("resource");
+		clients.inMemory().withClient("gigy").secret("secret").accessTokenValiditySeconds(60 * 60)
+				.scopes("read", "write").authorizedGrantTypes("password", "refresh_token");
 	}
 	
     @Bean

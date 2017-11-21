@@ -1,4 +1,4 @@
-package com.ms.auth.oauth;
+package pl.piomin.microservices.customer.oauth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
 @EnableResourceServer
-public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter { 
+public class CustomerResourceServer  extends ResourceServerConfigurerAdapter{ 
     @Override
     public void configure(ResourceServerSecurityConfigurer config) {
         config.tokenServices(tokenServices());
@@ -46,6 +46,4 @@ public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter 
         http.authorizeRequests().
         anyRequest().authenticated();
     }
-    
-    
 }
